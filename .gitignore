@@ -1,3 +1,3 @@
-.odt
-.pdf
-.pyc
+*.odt
+*.pdf
+*.pyc
