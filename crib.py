@@ -136,11 +136,11 @@ def scoreHand(origHand, cut):
     return fifteens * 2 + pairs * 2 + runPoints + flush + nob
     
 def checkWin(player1, player2):
-    if player1.points > 20:
+    if player1.points > 120:
         print ("You win!")
         printScore()
         exit()
-    elif player2.points > 20:
+    elif player2.points > 120:
         print ("You lose! What a noob.")
         printScore()
         exit()
@@ -468,16 +468,16 @@ def round(player1, player2):
     time.sleep(2)
     
 # Main game sequence
+if __name__ == '__main__':
+    player1 = Player()
+    player2 = Player()
+    random.seed()
 
-player1 = Player()
-player2 = Player()
-random.seed()
+    if random.randint(1, 2) == 1:
+        player1.dealer = True
+    else:
+        player2.dealer = True
 
-if random.randint(1, 2) == 1:
-    player1.dealer = True
-else:
-    player2.dealer = True
-
-while True:
-    # Play round
-    round(player1, player2)
+    while True:
+        # Play round
+        round(player1, player2)
